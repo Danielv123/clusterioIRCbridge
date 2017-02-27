@@ -4,6 +4,6 @@ import (
   "fmt"
 )
 
-main() {
+func main() {
   fmt.Println("IRC bridge initialized") 
 }
