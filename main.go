@@ -23,8 +23,11 @@ func main() {
 	// handle people typing things
 	c.HandleFunc("privmsg",
 		func(conn *irc.Conn, line *irc.Line) {
-			fmt.Println("/c game.print( \\'" + line.Nick + " | " + line.Args[1] + "\\' )")
+			str := "/c game.print( '" + line.Nick + " | " + line.Args[1] + "' )"
+			//str = strings.Replace(str, "'", "\\'", -1)
+			fmt.Println(str)
 		})
+
 	// ... or, use ConnectTo instead.
 	if err := c.ConnectTo("ipo.esper.net"); err != nil {
 		fmt.Printf("Connection error: %s\n", err.Error())
